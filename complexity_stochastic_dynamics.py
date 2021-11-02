@@ -1,5 +1,8 @@
-import sys
-from Immuno_models import *
+#######################################################################
+# Simulation of the stochastic evolution of a complex immune response.
+# Output presented in Figure 5 of the main text.
+#######################################################################
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,6 +11,10 @@ import pickle
 import time
 from tqdm import tqdm
 
+
+def binding_affinity(x, a, b):
+	
+    return 1/(1+((np.exp(a+b*x))))
 
 n0 = 2
 e0 = 2.5
